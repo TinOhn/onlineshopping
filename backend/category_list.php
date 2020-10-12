@@ -39,12 +39,14 @@
 	 						$stmt=$pdo->prepare($sql);
 	 						$stmt->execute();
 	 						$categories=$stmt->fetchAll();
+	 						$i=0;
 
 	 						foreach ($categories as $key => $category) {
+	 							$i++;
 	 							
 	 					 ?>
 	 					 <tr>
-							<td>1</td>
+							<td><?php echo $i; ?></td>
 							<td><?php echo $category['name']; ?></td>
 							<td><a href="#" class="btn btn-outline-primary btn-sm">Detail</a> <a href="#" class="btn btn-outline-warning btn-sm">Edit</a> <a href="#" class="btn btn-outline-danger btn-sm">Delete</a></td>
 

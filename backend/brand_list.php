@@ -39,14 +39,16 @@
 	 						$stmt=$pdo->prepare($sql);
 	 						$stmt->execute();
 	 						$brands=$stmt->fetchAll();
+	 						$i=0;
 
 	 						foreach ($brands as $key => $brand) {
+	 							$i++;
 	 							
 	 					 ?>
 	 					 <tr>
-							<td>1</td>
+							<td><?php echo $i; ?></td>
 							<td><?php echo $brand['name']; ?></td>
-							<td><a href="#" class="btn btn-outline-primary btn-sm">Detail</a> <a href="#" class="btn btn-outline-warning btn-sm">Edit</a> <a href="#" class="btn btn-outline-danger btn-sm">Delete</a></td>
+							<td><a href="#" class="btn btn-outline-primary btn-sm">Detail</a> <a href="#" class="btn btn-outline-warning btn-sm">Edit</a> <a href="brand_delete.php?id=<?php echo $brand['id'] ?>" class="btn btn-outline-danger btn-sm" onclick="return confirm('Are you sure you want to delete this item')">Delete</a></td>
 
 						</tr>
 

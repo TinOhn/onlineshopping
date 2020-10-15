@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shirts</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/main.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+  <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+      $("#nav2").hide();
+      $("#nav1").show();
+
+      $("#search1").click(function(){
+        $("#nav2").show();
+        $("#nav1").hide();
+      })
+
+      $("#back").click(function(){
+        $("#nav2").hide();
+        $("#nav1").show();
+      })
+
+    })
+
+  </script>
+  
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="container-float fixed-top" id="nav1">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 menu">
+      <div class="container">
+        <a href="index.html"><h3 class="navlogo">Tin Store</h3></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="myNav" class="collapse navbar-collapse">
+          <ul class="navbar-nav ml-auto px-5">
+            <li class="nav-item"><a href="index.html" class="nav-link px-4">Home</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Products
+              </a>
+              <div class="dropdown-menu drop" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="shirts.html">Shirts</a>
+                <a class="dropdown-item" href="suits.html">Suits</a>
+                <a class="dropdown-item" href="pants.html">Pants</a>
+                <a class="dropdown-item" href="shoes.html">Shoes</a>
+              </div>
+            </li>
+            <li class="nav-item"><a href="about.html" class="nav-link px-4">About</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link px-4">Contact</a></li>
+            <li><i class="fas fa-shopping-cart px-4"><span> 3</span></i></li>
+            <li><i class="fas fa-search px-4" id="search1"></i></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container-float fixed-top" id="nav2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 menu">
+      <input type="hidden" name="sid" id="sid">
+      <i class="fas fa-arrow-left" id="back"></i>
+      <div class="container" id="psize">
+        <div class="input-group my-2">
+          <input type="text" class="form-control" placeholder="Search This Site" aria-label="Search Products" aria-describedby="button-addon2" style="font-size: 1.2rem; color: black;">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fas fa-search px-4"></i></button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- <div class="sidenav">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#clients">Clients</a>
+    <a href="#contact">Contact</a>
+  </div> -->
+  <div class="container arrival mt-5">
+    <h1 class="pt-5">Our Shoes Products</h1>
+    <div class="row pt-3 mx-2">
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/s1.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 1</h5>
+            <p class="card-text">Price: 20000 MMK</p>
+             <p class="card-text"><del>40000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/s2.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 2</h5>
+            <p class="card-text">Price: 35000 MMK</p>
+            <p class="card-text"><del>70000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/s3.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 3</h5>
+            <p class="card-text">Price: 35000 MMK</p>
+            <p class="card-text"><del>70000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/s8.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 4</h5>
+            <p class="card-text">Price: 30000 MMK</p>
+            <p class="card-text"><del>50000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/ss1.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 1</h5>
+            <p class="card-text">Price: 20000 MMK</p>
+             <p class="card-text"><del>40000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/ss2.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 2</h5>
+            <p class="card-text">Price: 35000 MMK</p>
+            <p class="card-text"><del>70000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/ss7.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 3</h5>
+            <p class="card-text">Price: 35000 MMK</p>
+            <p class="card-text"><del>70000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/ss9.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 4</h5>
+            <p class="card-text">Price: 30000 MMK</p>
+            <p class="card-text"><del>50000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>  
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/ss5.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 1</h5>
+            <p class="card-text">Price: 20000 MMK</p>
+             <p class="card-text"><del>40000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 col-lg-3">
+        <div class="card">
+          <img src="images/s10.jpg" class="card-img-top" alt="...">
+          <div class="card-body text-center">
+            <h5 class="card-title">shirt 1</h5>
+            <p class="card-text">Price: 20000 MMK</p>
+             <p class="card-text"><del>40000 MMK</del></p>
+            <a href="#" class="btn btn-outline-secondary btn-block">Add to Cart</a>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+  <!-- footer bar -->
+  <div class="container-float foot mt-3">
+    <p class="text-center">All right reserved | Design By Tin </p>
+  </div>
+
+</body>
+</html>

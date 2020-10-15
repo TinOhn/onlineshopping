@@ -1,6 +1,11 @@
+<?php  
+  session_start();
+  if (!isset($_SESSION['loginuser'])) {
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -61,7 +66,7 @@
                     <a class="small" href="forgot-password.html">Forgot Password?</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
+                    <a class="small" href="register.php">Create an Account!</a>
                   </div>
                 </div>
               </div>
@@ -88,3 +93,11 @@
 </body>
 
 </html>
+
+<?php
+
+  }else{
+    header("location:index.php");
+  }
+
+?>

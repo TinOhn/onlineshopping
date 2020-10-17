@@ -48,7 +48,7 @@
 	 						$items=$stmt->fetchAll();
 	 						$i=0;
 
-	 						foreach ($items as $key => $item) {
+	 						foreach ($items as $item) {
 	 							$i++;
 	 							
 	 					 ?>
@@ -85,7 +85,7 @@
 
 	include "include/footer.php";
 	}else{
-    header("location:../MyShop/index.php");
+    header("location:../index.php");
   }
 	
  ?>

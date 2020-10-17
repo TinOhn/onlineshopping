@@ -1,3 +1,14 @@
+<?php 
+	session_start();
+
+	include "backend/dbconnect.php";
+	$sql="SELECT * FROM categories";
+	$stmt=$pdo->prepare($sql);
+	$stmt->execute();
+	$categories=$stmt->fetchAll();
+
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,20 +57,50 @@
 						<li class="nav-item"><a href="index.php" class="nav-link px-4">Home</a></li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Products
+								Categories
 							</a>
 							<div class="dropdown-menu drop" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="shirts.php">Shirts</a>
-								<a class="dropdown-item" href="suits.php">Suits</a>
-								<a class="dropdown-item" href="pants.php">Pants</a>
-								<a class="dropdown-item" href="shoes.php">Shoes</a>
-								<a class="dropdown-item" href="newarrival.php">New Arrival</a>
+								<?php 
+									foreach ($categories as $category) {
+									
+								 ?>
+								<a class="dropdown-item" href="categories.php?id=<?= $category['id'] ?>"><?= $category['name'] ?></a>
+							<?php } ?>
 							</div>
 						</li>
 						<li class="nav-item"><a href="about.php" class="nav-link px-4">About</a></li>
 						<li class="nav-item"><a href="contact.php" class="nav-link px-4">Contact</a></li>
-						<li><i class="fas fa-shopping-cart px-4"><span> 3</span></i></li>
-						<li><i class="fas fa-search px-4" id="search1"></i></li>
+						<?php 
+							if(isset($_SESSION['loginuser'])){
+						 ?>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<?= $_SESSION['loginuser']['name']; ?>
+							</a>
+							<div class="dropdown-menu drop" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="">Profile</a>
+								<a class="dropdown-item" href="backend/logout.php">Logout</a>
+							</div>
+						</li>
+						<?php 
+							}else{
+						 ?>
+						<li class="nav-item"><a href="backend/login.php" class="nav-link px-4">Login</a></li>
+						<li class="nav-item"><a href="backend/register.php" class="nav-link px-4">Register</a></li>
+					<?php } ?>
+
+						<li class="nav-item">
+							<a href="checkout.php" class="nav-link" id="count">
+								<span class="p1 fa-stack has-badge" id="item_count">
+									<i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse"></i>
+								</span>
+							</a>
+						</li>
+
+						<li class="nav-item">
+							<a href="#" class="nav-link px-4"><i class="fas fa-search" id="search1"></i></a>
+						</li>
+						
 					</ul>
 				</div>
 			</div>

@@ -44,7 +44,7 @@
 <?php 
 	include "include/footer.php";
 	}else{
-    header("location:../MyShop/index.php");
+    header("location:../index.php");
   }
 
 ?>

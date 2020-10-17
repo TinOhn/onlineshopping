@@ -4,6 +4,7 @@
   	if (isset($_SESSION['loginuser']) && $_SESSION['loginuser']['role_name']=="Admin") {
 
 	include "include/header.php";
+	include "dbconnect.php";
 
  ?>
 
@@ -23,7 +24,23 @@
 	 			</div>
 	 			<div class="form-group">
 	 				<label for="cat_id">Category Id</label>
-	 				<input type="text" name="cat_id" id="cat_id" class="form-control">
+	 				<select class="form-control" name="cat_id" id="cat_id">
+	 					<option>Choose.....</option>
+
+	 					<?php 
+
+	 						$sql="SELECT * FROM categories";
+	 						$stmt=$pdo->prepare($sql);
+	 						$stmt->execute();
+	 						$categories=$stmt->fetchALL();
+
+	 						foreach ($categories as $category) {
+
+	 					?>
+	 					 <option value="<?php echo $category['id']; ?>"><?php echo $category['name']; ?></option>
+
+	 					 <?php } ?>
+	 				</select>
 	 			</div>
 
 	 			<input type="submit" class="btn btn-primary float-right" value="Save">
@@ -33,8 +50,9 @@
 
 <?php 
 	include "include/footer.php";
+
 	}else{
-    header("location:../MyShop/index.php");
+    header("location:../index.php");
   }
   
 ?>

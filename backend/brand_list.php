@@ -44,7 +44,7 @@
 	 						$brands=$stmt->fetchAll();
 	 						$i=0;
 
-	 						foreach ($brands as $key => $brand) {
+	 						foreach ($brands as $brand) {
 	 							$i++;
 	 							
 	 					 ?>
@@ -68,7 +68,7 @@
 
 	include "include/footer.php";
 	}else{
-    header("location:../MyShop/index.php");
+    header("location:../index.php");
   }
 
 	

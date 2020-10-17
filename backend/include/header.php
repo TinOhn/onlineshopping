@@ -79,6 +79,16 @@
             <i class="fas fa-fw fa-list"></i>
             <span>Subcategories</span></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="order_list.php">
+            <i class="fas fa-fw fa-clipboard-list"></i>
+            <span>Orders</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="confirm_list.php">
+            <i class="fas fa-fw fa-clipboard-list"></i>
+            <span>Confirm</span></a>
+        </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">

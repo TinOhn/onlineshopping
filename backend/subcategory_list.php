@@ -46,7 +46,7 @@
 	 						$subcategories=$stmt->fetchAll();
 	 						$i=0;
 
-	 						foreach ($subcategories as $key => $subcategory) {
+	 						foreach ($subcategories as $subcategory) {
 	 							$i++;
 	 							
 	 					 ?>
@@ -71,7 +71,7 @@
 
 	include "include/footer.php";
 	}else{
-    header("location:../MyShop/index.php");
+    header("location:../index.php");
   }
 	
  ?>

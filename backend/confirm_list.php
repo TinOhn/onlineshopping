@@ -1,5 +1,5 @@
 <?php 
-	
+
 	session_start();
   	if (isset($_SESSION['loginuser']) && $_SESSION['loginuser']['role_name']=="Admin") {
 
@@ -10,13 +10,12 @@
 
  <!-- Page Heading -->
 	 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-	 	<h1 class="h3 mb-0 text-gray-800">Category List</h1>
-	 	<a href="category_create.php" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Category</a>
+	 	<h1 class="h3 mb-0 text-gray-800">Order List</h1>
 	 </div>
 
 	 <div class="card shadow mb-4">
 	 	<div class="card-header py-3">
-	 		<h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+	 		<h6 class="m-0 font-weight-bold text-primary">Order List</h6>
 	 	</div>
 	 	<div class="card-body">
 	 		<div class="table-responsive">
@@ -24,35 +23,43 @@
 	 				<thead>
 	 					<tr>
 	 						<th>#</th>
-	 						<th>Category Name</th>
-	 						<th>Option</th>
+	 						<th>User Name</th>
+	 						<th>Voucherno</th>
+	 						<th>Order Date</th>
+	 						<th>Total</th>
 	 					</tr>
 	 				</thead>
 	 				<tfoot>
 	 					<tr>
 	 						<th>#</th>
-	 						<th>Category Name</th>
-	 						<th>Option</th>
+	 						<th>User Name</th>
+	 						<th>Voucherno</th>
+	 						<th>Order Date</th>
+	 						<th>Total</th>
 	 					</tr>
 	 				</tfoot>
 	 				<tbody>
 	 					<?php 
 
-	 						$sql="SELECT * FROM categories";
+	 						$num=1;
+
+	 						$sql="SELECT orders.*,users.name as user_name FROM orders INNER JOIN users ON orders.user_id=users.id WHERE orders.status=:num";
 	 						$stmt=$pdo->prepare($sql);
+	 						$stmt->bindParam(':num',$num);
 	 						$stmt->execute();
-	 						$categories=$stmt->fetchAll();
+	 						$orders=$stmt->fetchAll();
 	 						$i=0;
 
-	 						foreach ($categories as $category) {
+	 						foreach ($orders as $order) {
 	 							$i++;
 	 							
 	 					 ?>
 	 					 <tr>
 							<td><?php echo $i; ?></td>
-							<td><?php echo $category['name']; ?></td>
-							<td><a href="category_edit.php?id=<?php echo $category['id']; ?>" class="btn btn-outline-warning btn-sm">Edit</a> <a href="#" class="btn btn-outline-danger btn-sm">Delete</a></td>
-
+							<td><?php echo $order['user_name']; ?></td>
+							<td><?php echo $order['voucherno']; ?></td>
+							<td><?php echo $order['orderdate']; ?></td>
+							<td><?php echo $order['total']; ?></td>
 						</tr>
 
 					<?php } ?>
@@ -70,6 +77,5 @@
 	}else{
     header("location:../index.php");
   }
-
 	
  ?>

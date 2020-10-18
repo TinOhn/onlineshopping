@@ -2,7 +2,7 @@
 	<div class="container-fluid footer">
 		<div class="row">
 			<div class="col-sm-6 col-md-6 col-xl-3 py-3 text-center">
-				<a href="index.html"><h3 class="navlogo">Tin Shop</h3></a><br>
+				<a href="index.php"><h3 class="navlogo">Tin Shop</h3></a><br>
 				<a href="https://www.twitter.com">
 					<span class="fa-stack fa-2x">
 					<i class="fas fa-square fa-stack-2x text-info"></i>

@@ -40,7 +40,7 @@
 				<p class="text-muted py-1 my-0"><b>Description: </b><?=$items['description']?></p>
 				<p class="text-muted py-1 my-0"><b>QTY: </b><input type="number" class="form-control" name="qty" value="1" style="width: 100px;"></p>
 				
-				<a href="javascript:void(0)" class="text-decoration-none text-dark  addtocart" data-id="<?= $items['id'] ?>" data-name="<?= $items['name'] ?>" data-price="<?= $items['price'] ?>" data-discount="<?= $items['discount'] ?>" style="width: 150px;">Add to Cart</a>
+				<button class="btn btn-success text-dark addtocart mt-3" data-id="<?= $items['id'] ?>" data-name="<?= $items['name'] ?>" data-price="<?= $items['price'] ?>" data-discount="<?= $items['discount'] ?>">Add to Cart</button>
 			</div>
 		</div>
 	</div>

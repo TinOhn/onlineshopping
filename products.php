@@ -11,7 +11,7 @@
  ?>
 
 	<div class="container arrival my-5 pt-5">
-		<h1 class="text-center">New Arrival</h1>
+		<h1 class="text-center">Our Products</h1>
 		<div class="row pt-1">
 			<?php 
 
@@ -35,7 +35,7 @@
 							<p class="text-muted py-1 my-0">
 								<b>Price: </b>
 								<?php 
-								if(isset($item['discount'])){
+								if($item['discount']){
 									echo $item['discount']."MMK";
 
 									?>

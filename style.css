@@ -53,12 +53,6 @@
   height: 480px;
 }
 
-/*New Arrival*/
-/*.arrival {
-  text-align: center;
-  color: #6c09ed;
-  text-transform: uppercase;
-}*/
 /*card*/
 .card{
   border: none;
@@ -77,9 +71,6 @@
 .mainphoto img{
   height: 400px;
 }
-/*.img1{
-  width: 100%;
-}*/
 
 /*footer*/
 .foot{
@@ -189,6 +180,13 @@
   cursor: pointer;
 }
 
+/*#abutton{
+  margin-top: 5px;
+  width: 150px;
+  height: 50px;
+  background-color: green;
+}*/
+
 
 #count .p1[data-count]:after{
   position:absolute;
@@ -214,6 +212,7 @@
   }
 
 }
+
 /*Footer Bar*/
 .footer{
 
@@ -229,7 +228,7 @@
   cursor: pointer;
 }
 .footer p a:hover{
-  color: #0fb2d6;
+  color: #6c09ed;
 }
 .footer .twit{
   color: #f725a6;
